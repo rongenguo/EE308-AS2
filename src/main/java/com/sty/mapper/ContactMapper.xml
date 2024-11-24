@@ -1,0 +1,16 @@
+<!-- 添加新的SQL映射 -->
+<insert id="insertContactName">
+    INSERT INTO contact_names (contact_id, name) VALUES (#{contactId}, #{name})
+</insert>
+
+<insert id="insertContactPhone">
+INSERT INTO contact_phones (contact_id, phone_number) VALUES (#{contactId}, #{phoneNumber})
+</insert>
+
+<select id="selectNamesByContactId" resultType="ContactName">
+SELECT * FROM contact_names WHERE contact_id = #{contactId}
+</select>
+
+<select id="selectPhonesByContactId" resultType="ContactPhone">
+SELECT * FROM contact_phones WHERE contact_id = #{contactId}
+</select>
